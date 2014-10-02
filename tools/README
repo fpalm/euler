@@ -1,4 +1,4 @@
 Um die Dateien in diesem Verzeichnis als Python-Module zu verwenden, fuege ein:
 
 import imp
-modulename = imp.load_source('filename.py', 'tools')
+yourShortcut = imp.load_source('modulename', 'tools/filename.py')
