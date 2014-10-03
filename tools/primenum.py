@@ -14,7 +14,7 @@ def isprime(n):
 		if t*t > n:
 			return True
 
-def findprimes(primemax=3, returnList = True):
+def findprimes(primemax=3, primemin=2, returnList = True):
 	primelist = [2, 3]
 	p = 5
 	if primemax >= 5:
@@ -23,6 +23,11 @@ def findprimes(primemax=3, returnList = True):
 	if primemax >= 7:
 		primelist.append(7)
 		p = 11
+	for x in primelist:
+		if x < primemin:
+			primelist.pop(primelist[x])
+	if primemin > 11:
+		p = primemin
 	while p < primemax:
 		if isprime(p):
 			primelist.append(p)
